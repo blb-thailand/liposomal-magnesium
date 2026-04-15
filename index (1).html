@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liposomal Magnesium - Premium Balance</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="floating-cart" class="floating-cart" onclick="openCartPopup()">
+        🛒 <span class="cart-text">ตะกร้า</span>
+        <span id="cart-count" class="cart-count">0</span>
+    </div>
+
+    <header class="hero-section">
+        <div class="hero-content">
+            <h1>ฟื้นฟูระบบประสาทและกล้ามเนื้อ</h1>
+            <p>Liposomal Magnesium ดูดซึมไว พักผ่อนเต็มอิ่ม</p>
+        </div>
+    </header>
+
+    <section class="storefront-promo">
+        <div class="promo-image-container">
+            <div class="glow-effect"></div>
+            <img src="bottle-image.png" alt="Liposomal Magnesium" class="promo-product-img">
+        </div>
+        
+        <div class="promo-details">
+            <div class="promo-badge">Best Seller ✨</div>
+            <h2 class="promo-title">เซ็ตพรีเมียม ฟื้นฟูการนอนหลับ</h2>
+            <p class="promo-subtitle">Liposomal Magnesium ดูดซึมไวกว่าทั่วไป 1.06 เท่า</p>
+            
+            <ul class="promo-benefits">
+                <li>✔️ คลายกล้ามเนื้อ ลดตะคริวตอนกลางคืน</li>
+                <li>✔️ หลับลึก พักผ่อนเต็มอิ่ม ตื่นมาสดชื่น</li>
+                <li>✔️ ไม่ระคายเคืองกระเพาะอาหาร ทานตอนท้องว่างได้</li>
+            </ul>
+
+            <div class="price-section">
+                <span class="old-price">ปกติ 1,290.-</span>
+                <span class="new-price">โปรพิเศษ 990.-</span>
+            </div>
+
+            <div class="fomo-container promo-fomo">
+                <p class="fomo-text">🔥 ด่วน! โปรโมชั่นนี้เหลือสิทธิ์อีกเพียง 5 เซ็ต</p>
+                <div class="fomo-bar"><div class="fomo-progress" style="width: 25%;"></div></div>
+            </div>
+
+            <button class="add-to-cart-btn btn-large" onclick="addToCart(this, 'เซ็ตพรีเมียม 1 กระปุก (990.-)')">
+                🛒 เพิ่มลงตะกร้า
+            </button>
+
+            <div class="trust-badges-container">
+                <div class="badge-item">🛡️ อย. 26-1-10867-5-0047</div>
+                <div class="badge-item">☪️ มาตรฐานฮาลาล</div>
+                <div class="badge-item">✨ รับประกันของแท้ 100%</div>
+            </div>
+        </div>
+    </section>
+
+    <div class="daily-tip-card">
+        <div class="tip-header">
+            <span class="tip-icon">✨</span>
+            <h3>เคล็ดลับดูแลตัวเองประจำวัน</h3>
+        </div>
+        <p id="daily-tip-text" class="tip-content">กำลังโหลดเคล็ดลับดีๆ สำหรับคุณ...</p>
+    </div>
+
+    <main class="menu-container">
+        <button class="menu-btn" onclick="openCartPopup()">
+            <span class="icon">🛒</span>
+            <span class="title">ตะกร้าสินค้า</span>
+            <span class="subtitle">ดูรายการสั่งซื้อ</span>
+        </button>
+        <button class="menu-btn" onclick="alert('ข้อมูลสินค้า: ดูดซึมไว 1.06 เท่า ไม่ระคายกระเพาะ')">
+            <span class="icon">💊</span>
+            <span class="title">Product Info</span>
+            <span class="subtitle">ข้อมูลสินค้า Liposomal</span>
+        </button>
+        <button class="menu-btn" onclick="openChatPopup()">
+            <span class="icon">💬</span>
+            <span class="title">Smart FAQ</span>
+            <span class="subtitle">ถาม-ตอบ อัตโนมัติ</span>
+        </button>
+        <button class="menu-btn" onclick="openAdminPopup()">
+            <span class="icon">👨‍💼</span>
+            <span class="title">ติดต่อแอดมิน</span>
+            <span class="subtitle">สแกน LINE OA</span>
+        </button>
+        <button class="menu-btn" onclick="alert('ระบบติดตามพัสดุเตรียมพร้อมให้บริการเร็วๆ นี้')">
+            <span class="icon">🚚</span>
+            <span class="title">Track Package</span>
+            <span class="subtitle">ติดตามพัสดุ</span>
+        </button>
+        <button class="menu-btn" onclick="alert('รีวิว: ทานแล้วหลับลึก ตะคริวหายจริง - คุณสมใจ')">
+            <span class="icon">⭐</span>
+            <span class="title">User Reviews</span>
+            <span class="subtitle">ดูรีวิวลูกค้า</span>
+        </button>
+    </main>
+
+    <div id="cart-popup" class="overlay">
+        <div class="cart-content" style="background:var(--card-navy); padding:25px; border-radius:16px; border:2px solid var(--accent-gold); width:350px; text-align:center;">
+            <h2 style="color: var(--accent-gold); margin-bottom: 15px;">🛒 รายการที่เลือก</h2>
+            <ul id="cart-items-list" style="list-style:none; text-align:left; margin-bottom:20px; max-height:200px; overflow-y:auto; padding:0;"></ul>
+            <button class="add-to-cart-btn" style="margin-bottom:10px;" onclick="openCheckout()">ดำเนินการชำระเงิน</button>
+            <br>
+            <button class="close-text-btn" onclick="closeCartPopup()" style="background:transparent; color:#A8B2D1; border:none; cursor:pointer; text-decoration:underline;">ปิดหน้าต่าง</button>
+        </div>
+    </div>
+
+    <div id="checkout-form-popup" class="overlay">
+        <div class="cart-content" style="background:var(--card-navy); padding:25px; border-radius:16px; border:2px solid var(--accent-gold); width:400px; text-align:center;">
+            <h3 style="color:var(--accent-gold); margin-bottom:15px;">กรอกที่อยู่จัดส่ง</h3>
+            <div class="input-group">
+                <input type="text" id="order-name" placeholder="ชื่อ-นามสกุล" class="form-input">
+                <input type="tel" id="order-tel" placeholder="เบอร์โทรศัพท์" class="form-input">
+                <textarea id="order-address" placeholder="ที่อยู่จัดส่งโดยละเอียด" class="form-input" rows="3"></textarea>
+            </div>
+            <button class="add-to-cart-btn" style="background:var(--accent-gold); margin-bottom:10px;" onclick="submitOrder()">🚀 ยืนยันการสั่งซื้อ</button>
+            <br>
+            <button class="close-text-btn" onclick="closeCheckout()" style="background:transparent; color:#A8B2D1; border:none; cursor:pointer; text-decoration:underline;">ย้อนกลับ</button>
+        </div>
+    </div>
+
+    <div id="faq-chat-popup" class="overlay">
+        <div class="chat-container">
+            <button class="close-btn" style="position:absolute; top:10px; right:10px; background:var(--accent-gold); color:var(--bg-deep-navy); border:none; border-radius:50%; width:30px; height:30px; font-weight:bold; cursor:pointer;" onclick="closeChat()">✖</button>
+            <div class="chat-header">
+                <img src="avatar-3d.png" alt="Admin" class="avatar-img">
+                <div>
+                    <h3 style="color: var(--accent-gold); margin:0;">ผู้เชี่ยวชาญ BLB</h3>
+                    <p style="font-size: 0.8rem; color: #A8B2D1; margin:0;">ออนไลน์พร้อมให้คำปรึกษา</p>
+                </div>
+            </div>
+            <div id="chat-box" class="chat-box">
+                <div class="message bot-msg">สวัสดีครับ 😊 มีข้อสงสัยเกี่ยวกับ Liposomal Magnesium สอบถามผมได้เลยนะครับ</div>
+            </div>
+            <div class="chat-options">
+                <button onclick="sendQuestion('ทานตอนท้องว่างได้ไหม?')">ทานตอนท้องว่างได้ไหม?</button>
+                <button onclick="sendQuestion('ต่างจากยี่ห้ออื่นยังไง?')">ต่างจากยี่ห้ออื่นยังไง?</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="admin-popup" class="overlay">
+        <div class="chat-container" style="text-align:center; padding:30px;">
+            <button class="close-btn" style="position:absolute; top:10px; right:10px; background:var(--accent-gold); color:var(--bg-deep-navy); border:none; border-radius:50%; width:30px; height:30px; font-weight:bold; cursor:pointer;" onclick="closeAdminPopup()">✖</button>
+            <h3 style="color:var(--accent-gold); margin-bottom:15px;">ปรึกษาผู้เชี่ยวชาญทาง LINE</h3>
+            <div class="qr-frame">
+                <img src="your-line-qr.png" alt="LINE QR Code" style="width:180px; height:180px;">
+            </div>
+            <p style="color:var(--text-cream); margin:15px 0; font-size:0.9rem;">สแกนเพื่อแอดไลน์ หรือกดปุ่มด้านล่าง</p>
+            <a href="https://line.me/ti/p/@yourid" target="_blank" class="add-to-cart-btn" style="text-decoration:none; display:inline-block;">💬 คลิกเพื่อแอดไลน์</a>
+        </div>
+    </div>
+
+    <div id="gacha-popup" class="overlay">
+        <div class="gacha-content">
+            <button class="close-btn" style="position:absolute; top:10px; right:10px; background:var(--accent-gold); color:var(--bg-deep-navy); border:none; border-radius:50%; width:30px; height:30px; font-weight:bold; cursor:pointer;" onclick="closeGacha()">✖</button>
+            <h2 style="color: var(--accent-gold);">🎉 ของขวัญพิเศษ!</h2>
+            <p style="color:white;">คลิกที่กล่องเพื่อสุ่มรับคูปอง</p>
+            <div class="gacha-box-container" onclick="openGacha()">
+                <div id="gacha-box" class="gacha-box">🎁</div>
+                <div id="gacha-reward" class="gacha-reward" style="display: none;">
+                    <h3 style="color:white;">ส่วนลด 100 บาท!</h3>
+                    <p style="color:white;">รหัส: <span style="color: var(--accent-gold); font-weight: bold;">BLB-GOLD100</span></p>
+                    <button class="add-to-cart-btn" onclick="closeGacha()">รับสิทธิ์เลย</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="social-proof" class="social-proof-toast">
+        <div class="sp-icon">🛒</div>
+        <div class="sp-text">
+            <span id="sp-name" style="color: var(--accent-gold); font-weight: bold;">คุณ ลูกค้า</span><br>
+            เพิ่งสั่งซื้อ <span id="sp-product">สินค้า</span><br>
+            <span style="font-size: 0.75rem; color: #8892B0;">เมื่อ 2 นาทีที่แล้ว</span>
+        </div>
+    </div>
+
+    <div id="sticky-cta" class="sticky-cta">
+        <button onclick="openCartPopup()" class="add-to-cart-btn">🛒 สั่งซื้อตอนนี้</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
